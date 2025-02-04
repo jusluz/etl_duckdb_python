@@ -17,11 +17,4 @@ RUN poetry install --no-interaction
 EXPOSE 8501
 
 # Set the entrypoint to run the Streamlit application
-ENTRYPOINT ["poetry", "run", "streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]FROM python:3.12-slim
-RUN pip install poetry
-COPY . /src
-WORKDIR /src
-RUN poetry install --no-root
-EXPOSE 8501
-ENTRYPOINT [ "poetry", 'run', 'streamlit', 'run', 'app.py', '--server.port=8501', '--server.address=0.0.0.0']
-# ENTRYPOINT ["poetry","run", "python", "main.py"]
+ENTRYPOINT ["poetry", "run", "streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
