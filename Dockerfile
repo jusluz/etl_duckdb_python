@@ -1,5 +1,5 @@
 FROM python:3.12
-RUN pip install poetry
+RUN pip install poetry --no-root
 COPY . /src
 WORKDIR /src
 RUN poetry install
